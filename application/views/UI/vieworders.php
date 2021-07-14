@@ -45,8 +45,9 @@ th,td{
             <div class="card">
               <div class="card-body">
               <!--table-->
-              <table class="table table-responsive d-table table-striped">
+              <table class="table table-responsive table-striped" id="myTable">
                 
+                <thead>
                     <tr>
                     <th scope="col">ID</th>
                     <!-- <th scope="col">Customer name</th> -->
@@ -55,12 +56,13 @@ th,td{
                     <th scope="col">Item Price</th>
                     <th scope="col">Action</th>
                     </tr>
-
+                </thead>
+                <tbody>
                     <?php
               if(!empty($items)){
                 foreach($items as $item){
             ?>
-                <tbody>
+                
                     <tr>
                     <td><?= $item['id'];?></td>
 
@@ -72,7 +74,7 @@ th,td{
                     <a href="<?= base_url().'resturant/Resturant/delete/'.$item['id'];?>" class="btn btn-danger btn-sm" >Reject</a>
                     </td>
                     </tr>
-                </tbody>
+                
             <?php
             }
           }
@@ -84,7 +86,7 @@ th,td{
             <?php }
 
             ?>
-    
+              </tbody>
               </table>
               <!---table end-->
             </div>
@@ -102,4 +104,5 @@ th,td{
 <?php
 $this->load->view('UI/footerui');
 ?>
+
 

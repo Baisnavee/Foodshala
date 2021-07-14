@@ -11,6 +11,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url().'Assets/UI_assets/css/bootstrap.min.css';?>" >
 
+    <!--Data Tables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+
     <title>Foodshala booking</title>
 
 <style>
@@ -114,18 +118,18 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link mx-2" href="<?= base_url().'resturant/Resturant/home';?>">Home</a>
+            <li class="nav-item">
+              <a class="nav-link mx-2 <?=($sts=='home')?'active':'';?>" href="<?= base_url().'resturant/Resturant/home';?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="#about_resturant">About us</a>
+              <a class="nav-link mx-2 <?=($sts=='abt')?'active':'';?>" href="#about_resturant">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="<?= base_url().'resturant/Resturant/create/'.$rest_id?>">Add items</a>
+              <a class="nav-link mx-2 <?=($sts=='add')?'active':'';?>" href="<?= base_url().'resturant/Resturant/create/'.$rest_id?>">Add items</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link mx-2" href="<?= base_url().'resturant/Resturant/vieworder/'.$rest_id?>">View Orders</a>
+              <a class="nav-link mx-2 <?=($sts=='order')?'active':'';?>" href="<?= base_url().'resturant/Resturant/vieworder/'.$rest_id?>">View Orders</a>
             </li>
 
             <li class="nav-item ">

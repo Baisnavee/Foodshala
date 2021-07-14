@@ -95,12 +95,14 @@ class Customer extends CI_Controller{
     }
 
     public function home(){
-        $this->load->view('UI/homepage_customer');
+        $data['sts']='home';
+        $this->load->view('UI/homepage_customer',$data);
     }
 
     public function order(){
         $this->load->model('Items_model');
         $result=$this->Items_model->get();
+        $data['sts']='orders';
         $data['items']=$result;
         $this->load->view('UI/place_order',$data);
     }
@@ -109,8 +111,6 @@ class Customer extends CI_Controller{
         $this->load->model('Items_model');
         $this->load->model('Customer_model');
         $r=$this->Items_model->get_item($id);
-        // print_r($r);
-        // exit();
         $val=$this->session->userdata('customer');
         $orderarray=array();
         //$orderarray['item_id']=$id;

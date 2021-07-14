@@ -6,8 +6,10 @@ class Home extends CI_controller{
         // $job=$this->Jobs_model->get_uiid();
         // $data=[];
         // $data['arr']=$job;
+        $data['sts']='home';
+        //$data['sts']='abt';
 
-        $this->load->view('UI/homepage');
+        $this->load->view('UI/homepage', $data);
     }
 
     public function menu(){
@@ -19,7 +21,7 @@ class Home extends CI_controller{
         //$val=$this->Resturant_model->getrest();
        // $data['r']=$val;
         $data['items']=$result;
-
+        $data['sts']='menu';
         $this->load->view('UI/menucard',$data);
     }
 }

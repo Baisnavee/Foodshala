@@ -11,6 +11,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url().'Assets/UI_assets/css/bootstrap.min.css';?>" >
 
+    <!--Data table CSS-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+
     <title>Foodshala booking</title>
 
 <style>
@@ -108,16 +112,25 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link mx-2" href="<?= base_url().'index.php/Home';?>">Home</a>
+            <li class="nav-item">
+              <a class="nav-link mx-2 <?=($sts=='home')?'active':'';?>" href="<?= base_url().'index.php/Home';?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="<?= base_url().'#about';?>">About us</a>
+              <a class="nav-link mx-2 <?=($sts=='abt')?'active':'';?>" href="<?= base_url().'#about';?>">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2" href="<?= base_url().'Home/menu';?>">View menu</a>
+              <a class="nav-link mx-2 <?=($sts=='menu')?'active':'';?>" href="<?= base_url().'Home/menu';?>">View menu</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?=($sts=='login')?'active':'';?>">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="<?=base_url().'resturant/Resturant/index';?>">Resturant login</a>
+                    <a class="dropdown-item" href="<?=base_url().'customer/Customer/index';?>">Customer login</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown <?=($sts=='reg')?'active':'';?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Register
                 </a>

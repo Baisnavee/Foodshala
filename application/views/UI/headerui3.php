@@ -11,6 +11,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url().'Assets/UI_assets/css/bootstrap.min.css';?>" >
 
+    <!--Data table CSS-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+
     <title>Foodshala booking</title>
 
 <style>
@@ -109,17 +113,17 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link mx-2" href="<?= base_url().'customer/Customer/home';?>">Home</a>
+            <li class="nav-item">
+              <a class="nav-link mx-2 <?=($sts=='home') ?'active':'';?>" href="<?= base_url().'customer/Customer/home';?>">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mx-2" href="#about_customer">About us</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link mx-2" href="<?= base_url().'customer/Customer/order';?>">Place order </a>   
+                <a class="nav-link mx-2 <?=($sts=='orders') ?'active':'';?>" href="<?= base_url().'customer/Customer/order';?>">Place order </a>   
             </li>
             <li class="nav-item ">
-                <a class="nav-link mx-2" href="<?= base_url().'customer/Customer/logout';?>">Logout</a>   
+                <a class="nav-link mx-2 <?=($sts=='logout') ?'active':'';?>" href="<?= base_url().'customer/Customer/logout';?>">Logout</a>   
             </li>
             
 

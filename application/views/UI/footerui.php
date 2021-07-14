@@ -1,4 +1,7 @@
 <footer class="bg-light">
+<script src="<?= base_url().'assets/UI_assets/js/jquery-3.3.1.slim.min.js'?>"></script>
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url().'assets/UI_assets/js/bootstrap.min.js'?>"></script>
       <div class="container">
         <div class="row">
 
@@ -25,4 +28,11 @@
 
         </div>
       </div>
+      <script>
+  $(document).ready(function () {
+    $('#myTable').DataTable({
+      //"order":[[6, "desc"]]
+    });
+  });
+</script>
     </footer>

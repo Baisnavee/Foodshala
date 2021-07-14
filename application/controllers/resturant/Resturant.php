@@ -110,7 +110,7 @@ class Resturant extends CI_Controller{
         // // // exit();
         //  $data['arr']=$result;
         
-        //data['id']=$result['id'];
+        $data['sts']='add';
 
         $this->form_validation->set_rules('item_name', 'Item Name' ,'required');
         $this->form_validation->set_rules('price', 'Price' ,'required');
@@ -141,7 +141,7 @@ class Resturant extends CI_Controller{
         }
         else{
             
-        $this->load->view('UI/additems');
+        $this->load->view('UI/additems', $data);
         }
     }
 
@@ -149,7 +149,9 @@ class Resturant extends CI_Controller{
     public function home(){
         $result=$this->session->userdata('resturant');
         $data['id']=$result['id'];
-        $this->load->view('UI/homepage_resturant');
+        $data['sts']='home';
+
+        $this->load->view('UI/homepage_resturant', $data);
     }
 
     public function vieworder($id){
@@ -159,6 +161,7 @@ class Resturant extends CI_Controller{
         $this->load->model('Items_model');
         $array=$this->Resturant_model->getorder($id);
         $data['items']=$array;
+        $data['sts']='order';
 
         // $result=$this->Resturant_model->getresturant($id);
         // $data['orders']=$result;

@@ -47,10 +47,11 @@ th,td{
             <div class="card">
               <div class="card-body">
               <!--table-->
-              <table class="table table-responsive d-table table-striped">
+              <table class="table table-responsive table-striped" id="myTable">
                 
+                  <thead>
                     <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Sl no</th>
                     <th scope="col">Item name</th>
                     <th scope="col">Item Type</th>
                     <th scope="col">Price</th>
@@ -60,14 +61,16 @@ th,td{
 
                     <!-- <th scope="col">Action</th> -->
                     </tr>
-
+                  </thead>
+                  <tbody>
                     <?php
               if(!empty($items)){
+                $i=1;
                 foreach($items as $item){
             ?>
-                <tbody>
+                
                     <tr>
-                    <td><?= $item['id'];?></td>
+                    <td><?= $i;?></td>
                     <td><?= $item['item_name'];?></td>
                     <td>
                     <?php
@@ -114,8 +117,8 @@ th,td{
                     <a href="javascript::void(0); " onclick="deletejob(<?//= $arr['id'];?>)" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i>Delete</a>
                     </td> -->
                     </tr>
-                </tbody>
-            <?php
+                
+            <?php $i++;
             }
           }
             else{
@@ -126,7 +129,7 @@ th,td{
             <?php }
 
             ?>
-    
+              </tbody>
               </table>
               <!---table end-->
             </div>
