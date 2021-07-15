@@ -1,6 +1,8 @@
 <?php 
 class Resturant extends CI_Controller{
+       
 
+    
     // this function show the login page 
     public function index(){
         $this->load->library('form_validation');
@@ -33,7 +35,7 @@ class Resturant extends CI_Controller{
                 $formarray['password']=password_hash($this->input->post('password'),PASSWORD_DEFAULT);
                 $this->Resturant_model->create($formarray);
                 $this->session->set_flashdata('success','Registered successfully, Login to continue');
-                redirect(base_url('resturant/Resturant/index'));
+                redirect(base_url('resturant/Resturantcontrol/index'));
             }
             else{
                 $this->session->set_flashdata('fail','The passwords you have entered do not match.Please try again!!');
@@ -77,22 +79,22 @@ class Resturant extends CI_Controller{
                         // print_r($valArr);
                         // exit();
                         //$this->session->set_flashdata('success','Login successful');
-                        redirect(base_url().'resturant/Resturant/home');
+                        redirect(base_url().'resturant/Resturantcontrol/index');
                     }else{
                         
                         $this->session->set_flashdata('fail','Password is incorrect');
-                        redirect(base_url().'resturant/Resturant/index');
+                        redirect(base_url().'resturant/Resturantcontrol/index');
                     }
                 }
                 else{
                     $this->session->set_flashdata('fail','Username is incorrect');
-                    redirect(base_url().'resturant/Resturant/index');
+                    redirect(base_url().'resturant/Resturantcontrol/index');
                 }
 
             }
             else{
                 $this->session->set_flashdata('fail','Username or Password is incorrect');
-                redirect(base_url().'resturant/Resturant/index');
+                redirect(base_url().'resturant/Resturantcontrol/index');
             }
         }
         else{

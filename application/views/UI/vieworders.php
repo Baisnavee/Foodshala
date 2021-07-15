@@ -45,7 +45,7 @@ th,td{
             <div class="card">
               <div class="card-body">
               <!--table-->
-              <table class="table table-responsive table-striped" id="myTable">
+              <table class="table table-responsive d-table table-striped" id="myTable">
                 
                 <thead>
                     <tr>
